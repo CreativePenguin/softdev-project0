@@ -27,7 +27,7 @@ def addEntry(userid, blogid, entrytext):
 
 def editEntry(userid, blogid, entrynum, entrytext):
     """edits an entry in the database based on the userid, blogid, entrynum, and the updated entrytext"""
-        db = sqlite3.connect(DB_FILE)
+    db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
     #==========================================================
