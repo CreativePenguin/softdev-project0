@@ -7,8 +7,7 @@ import sqlite3
 import csv
 import os
 
-DB_FILE ="data/databases.db"
-
+DB_FILE ="../data/databases.db"
 
 def addEntry(userid, blogid, entrytext):
     """adds an entry into the blog taking in the userid, blogid, and the blog text. This method returns nothing"""
