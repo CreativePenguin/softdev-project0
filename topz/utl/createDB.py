@@ -7,7 +7,7 @@ import sqlite3
 import csv
 import os
 
-DB_FILE = os.path.dirname("data/databases.db")
+DB_FILE = os.path.dirname("../data/databases.db")
 def createTable():
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()

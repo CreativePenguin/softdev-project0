@@ -7,7 +7,7 @@ import sqlite3
 import csv
 import os
 
-DB_FILE = os.path.dirname("data/databases.db")
+DB_FILE = os.path.dirname("../data/databases.db")
 
 def displayBlogs(username):
     """Returns all blogs of a user specified by their username. The return value of this method is going to a list of blogs. The overall list will be organized by [blog1, blog2, blog3, ...] and each blog will be a list so blog1 = [blog_id, blog_name, entry1, entry2, ...]"""
