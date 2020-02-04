@@ -6,7 +6,7 @@
 import sqlite3
 import csv
 import os
-
+from os.path import join, dirname, abspath
 DB_FILE = join(dirname(dirname(abspath(__file__))), 'data/databases.db')
 def createTable():
     db = sqlite3.connect(DB_FILE)
