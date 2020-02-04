@@ -5,10 +5,12 @@
 
 import sqlite3
 import csv
+import os
+DB_FILE = os.path.dirname("data/databases.db")
 
 def displayBlogs(username):
     """Returns all blogs of a user specified by their username. The return value of this method is going to a list of blogs. The overall list will be organized by [blog1, blog2, blog3, ...] and each blog will be a list so blog1 = [blog_id, blog_name, entry1, entry2, ...]"""
-    DB_FILE="data/databases.db"
+
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -37,7 +39,7 @@ def displayBlogs(username):
 
 def displayBlogsID(userid):
     """Returns all blogs of a user specified by their userid. The return value of this method is going to a list of blogs. The overall list will be organized by [blog1, blog2, blog3, ...] and each blog will be a list so blog1 = [blog_id, blog_name, entry1, entry2, ...]"""
-    DB_FILE="data/databases.db"
+    DB_FILE= DIR +"data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -65,7 +67,7 @@ def displayBlogsID(userid):
 
 def displayEntries(username, blogid):
     """Returns all entries for the specified user_id, blog_id combination. Return value will be a list formatted as [blog_id, blog_name, entry1, entry2,...]"""
-    DB_FILE="data/databases.db"
+    DB_FILE= DIR +"data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -90,7 +92,7 @@ def displayEntries(username, blogid):
 
 def displayOnlyEntries(username, blogid):
 
-    DB_FILE="data/databases.db"
+    DB_FILE= DIR +"data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -117,7 +119,7 @@ def displayOnlyEntries(username, blogid):
 
 def getAllBlogs():
     """Returns the last entry for every existing blog. This will be primarily used in the featured section of the home page. Return value will be a list formatted as [blog1, blog2...]. blog1 will be [blog1_name, entry]"""
-    DB_FILE="data/databases.db"
+    DB_FILE= DIR +"data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -144,7 +146,7 @@ def getAllBlogs():
 
 def getUserID(username):
     """returns the userID for the corresponding username"""
-    DB_FILE="data/databases.db"
+    DB_FILE= DIR +"data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -163,7 +165,7 @@ def getUserID(username):
 
 def getBlogName(userid,blogid):
     """get the blog name for the blog with the corresponding userid and blogid"""
-    DB_FILE="data/databases.db"
+    DB_FILE= DIR +"data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -182,7 +184,7 @@ def getBlogName(userid,blogid):
 
 def getEntry(userid, blogid, entryid):
     """get the entry for the corresponding userid, blogid, entryid"""
-    DB_FILE="data/databases.db"
+    DB_FILE= DIR +"data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()

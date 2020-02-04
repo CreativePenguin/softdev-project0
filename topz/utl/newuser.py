@@ -5,10 +5,11 @@
 
 import sqlite3
 import csv
+import os
+DB_FILE = os.path.dirname("data/databases.db")
 
 def addUser(username, password):
     """method for registering a new user"""
-    DB_FILE="data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -31,5 +32,5 @@ def addUser(username, password):
     else:
         db.commit() #save changes
         db.close()  #close database
-        return -1 #returns -1 if username already exists as bad value 
+        return -1 #returns -1 if username already exists as bad value
     #==========================================================

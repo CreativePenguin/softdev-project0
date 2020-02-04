@@ -5,10 +5,12 @@
 
 import sqlite3
 import csv
+import os
+
+DB_FILE = os.path.dirname("data/databases.db")
 
 def checkLogin(username, password):
     """returns userid of the username, password pair and returns -1 if it doesn't exist """
-    DB_FILE="data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()

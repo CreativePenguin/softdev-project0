@@ -5,11 +5,10 @@
 
 import sqlite3
 import csv
-
+import os
+DB_FILE = os.path.dirname("data/databases.db")
 def addEntry(userid, blogid, entrytext):
     """adds an entry into the blog taking in the userid, blogid, and the blog text. This method returns nothing"""
-    DB_FILE="data/databases.db" #reads the database
-
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
@@ -28,9 +27,7 @@ def addEntry(userid, blogid, entrytext):
 
 def editEntry(userid, blogid, entrynum, entrytext):
     """edits an entry in the database based on the userid, blogid, entrynum, and the updated entrytext"""
-    DB_FILE="data/databases.db"
-
-    db = sqlite3.connect(DB_FILE)
+        db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
     #==========================================================
@@ -44,8 +41,6 @@ def editEntry(userid, blogid, entrynum, entrytext):
 
 def createBlog(userid, blogtitle):
     """creates a new blog for a user with a blogname, and will add it to the blogs db. When the blog is created, it will be initialized by a pilot entry """
-    DB_FILE="data/databases.db"
-
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 

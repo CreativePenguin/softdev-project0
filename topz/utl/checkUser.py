@@ -5,9 +5,10 @@
 
 import sqlite3
 import csv
+import os
+DB_FILE = os.path.dirname("data/databases.db")
 
 def checkUser(username):
-    DB_FILE="data/databases.db"
 
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
