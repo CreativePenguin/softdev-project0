@@ -6,8 +6,7 @@
 import sqlite3
 import csv
 import os
-DB_FILE = os.path.dirname("data/databases.db")
-
+DB_FILE ="data/databases.db"
 def addUser(username, password):
     """method for registering a new user"""
 
