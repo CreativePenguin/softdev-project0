@@ -190,5 +190,5 @@ def editBlog(blogid, entrynum):
     return redirect(url_for("firstLogin"))
 
 if __name__ == "__main__":
-    app.debug = True
+    app.debug = False
     app.run()
