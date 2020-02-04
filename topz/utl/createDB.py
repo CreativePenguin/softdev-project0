@@ -6,7 +6,7 @@
 import sqlite3
 import csv
 import os
-DB_FILE ="data/databases.db"
+
 
 def createTable():
     db = sqlite3.connect(DB_FILE)

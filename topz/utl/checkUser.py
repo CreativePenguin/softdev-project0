@@ -6,7 +6,7 @@
 import sqlite3
 import csv
 import os
-DB_FILE ="data/databases.db"
+
 def checkUser(username):
 
     db = sqlite3.connect(DB_FILE)
