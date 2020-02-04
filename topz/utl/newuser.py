@@ -7,6 +7,9 @@ import sqlite3
 import csv
 import os
 
+DB_FILE ="data/databases.db"
+
+
 def addUser(username, password):
     """method for registering a new user"""
 
