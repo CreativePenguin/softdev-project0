@@ -6,9 +6,11 @@
 import sqlite3
 import csv
 import os
-
+os.path.dirname(__file__)
+DIR = os.path.dirname(__file__)
+DIR += '/'
 DB_FILE ="../data/databases.db"
-
+DIR += DB_FILE
 def addEntry(userid, blogid, entrytext):
     """adds an entry into the blog taking in the userid, blogid, and the blog text. This method returns nothing"""
     db = sqlite3.connect(DB_FILE)

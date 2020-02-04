@@ -7,7 +7,11 @@ import sqlite3
 import csv
 import os
 
+os.path.dirname(__file__)
+DIR = os.path.dirname(__file__)
+DIR += '/'
 DB_FILE ="../data/databases.db"
+DIR += DB_FILE
 
 def checkLogin(username, password):
     """returns userid of the username, password pair and returns -1 if it doesn't exist """
