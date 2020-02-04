@@ -18,6 +18,9 @@ from utl import addDB
 
 import sqlite3
 import os
+os.path.dirname(__file__)
+DIR = os.path.dirname(__file__)
+DIR += '/'
 app = Flask(__name__)
 app.secret_key = os.urandom(32) #generates a secret key for session to start
 createDB.createTable() #always create tables when first run, just in case tables don't exist
