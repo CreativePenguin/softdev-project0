@@ -7,7 +7,7 @@ import sqlite3
 import csv
 import os
 
-DB_FILE = os.path.dirname("../data/databases.db")
+DB_FILE = join(dirname(dirname(abspath(__file__))), 'data/databases.db')
 def checkUser(username):
 
     db = sqlite3.connect(DB_FILE)
