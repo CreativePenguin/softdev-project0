@@ -22,7 +22,7 @@ os.path.dirname(__file__)
 DIR = os.path.dirname(__file__)
 DIR += '/'
 
-DB_FILE ="data/databases.db"
+DB_FILE ="{}databases.db".format(DIR)
 
 DIR += DB_FILE
 
