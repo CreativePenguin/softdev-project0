@@ -6,11 +6,14 @@
 import sqlite3
 import csv
 import os
+from checkLogin import saltPassword
 from os.path import join, dirname, abspath
 DB_FILE = join(dirname(dirname(abspath(__file__))), 'data/databases.db')
+
 def addUser(username, password):
     """method for registering a new user"""
 
+    password = saltPassword(username, password)
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 

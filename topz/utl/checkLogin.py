@@ -6,18 +6,26 @@
 import sqlite3
 import csv
 import os
+import subprocess
 from os.path import join, dirname, abspath
 DB_FILE = join(dirname(dirname(abspath(__file__))), 'data/databases.db')
+
+def saltPassword(username, password):
+    """uses username and password to create a salt to encrypt passwords"""
+    return subprocess.run(['lesspass', '206.189.68.125', username, password],
+                          stdout=subprocess.PIPE).stdout
 
 def checkLogin(username, password):
     """returns userid of the username, password pair and returns -1 if it doesn't exist """
 
+    password = saltPassword(usernma,e password)
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
     #==========================================================
     command = "SELECT user_id, username FROM users WHERE username = \"{}\" AND password = \"{}\";".format(username, password) #looks for the username,password combination in the users db
-    c.execute(command)
+    c.execute('SELECT user_id, username FROM users where username = ? AND password = ?',
+              [username, password])
     q = c.fetchall()
     #==========================================================
 
